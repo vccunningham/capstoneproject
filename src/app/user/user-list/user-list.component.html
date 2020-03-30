@@ -1,0 +1,30 @@
+<a routerLink="/users/create">Create</a>
+<div class="component">
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>User Options</th>
+        </tr>
+        <tr *ngFor="let u of users  | sort:'username'">
+            <td>{{u.id}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.password}}</td>
+            <td>{{u.firstName}}</td>
+            <td>{{u.lastName}}</td>
+            <td>{{u.phone}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.isReviewer}}</td>
+            <td>{{u.isAdmin}}</td>
+            <td>
+                <a routerLink="/users/detail/{{u.id}}">Detail</a> |
+                <a routerLink="/users/edit/{u.id}}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
